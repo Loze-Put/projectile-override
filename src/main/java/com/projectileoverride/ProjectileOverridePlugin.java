@@ -68,7 +68,7 @@ public class ProjectileOverridePlugin extends Plugin
 
 		int overrideId = overrideMap.getOrDefault(projectile.getId(), ProjectileIds.NONE);
 
-		if (overrideId >= 0) {
+		if (overrideId != ProjectileIds.NONE) {
 			overridden.add(replaceProjectile(projectile, overrideId));
 
 			// Some bosses (Leviathan, Whisperer, Inferno blobs) can have multiple projectiles active. Assume a
