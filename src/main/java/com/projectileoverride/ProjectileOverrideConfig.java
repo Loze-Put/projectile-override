@@ -4,9 +4,11 @@ import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
-@ConfigGroup("projectileoverride")
+@ConfigGroup(ProjectileOverrideConfig.CONFIG_GROUP)
 public interface ProjectileOverrideConfig extends Config
 {
+	public static final String CONFIG_GROUP = "projectileoverride";
+
 	@ConfigItem(
 		keyName = "dom",
 		name = "Doom of Mokhaiotl",
@@ -14,7 +16,7 @@ public interface ProjectileOverrideConfig extends Config
 	)
 	default BossProjectiles DoomOfMokhaiotl()
 	{
-		return BossProjectiles.DOOM_OF_MOKHAIOTL;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -23,7 +25,7 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for Hueycoatl"
 	)
 	default BossProjectiles Hueycoatl() {
-		return BossProjectiles.HUEYCOATL;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -32,7 +34,7 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for normal Hunllef"
 	)
 	default BossProjectiles HunllefNormal() {
-		return BossProjectiles.HUNLLEF_NORMAL;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -41,7 +43,7 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for corrupted Hunllef"
 	)
 	default BossProjectiles HunllefCorrupted() {
-		return BossProjectiles.HUNLLEF_CORRUPTED;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -50,7 +52,7 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for the blobs in the Inferno"
 	)
 	default BossProjectiles Inferno() {
-		return BossProjectiles.INFERNO;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -59,7 +61,7 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for Leviathan"
 	)
 	default BossProjectiles Leviathan() {
-		return BossProjectiles.LEVIATHAN;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -68,7 +70,7 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for Olm in the Chambers of Xeric"
 	)
 	default BossProjectiles Olm() {
-		return BossProjectiles.OLM;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -77,7 +79,7 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for Scurrius"
 	)
 	default BossProjectiles Scurrius() {
-		return BossProjectiles.SCURRIUS;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -86,7 +88,7 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for Sotetseg in the Theatre of Blood"
 	)
 	default BossProjectiles Sotetseg() {
-		return BossProjectiles.SOTETSEG;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -95,7 +97,7 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for Vardorvis"
 	)
 	default BossProjectiles Vardorvis() {
-		return BossProjectiles.VARDORVIS;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -104,7 +106,7 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for Wardens in the Tombs of Amascut"
 	)
 	default BossProjectiles Wardens() {
-		return BossProjectiles.WARDENS;
+		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
@@ -113,6 +115,6 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for the Whisperer"
 	)
 	default BossProjectiles Whisperer() {
-		return BossProjectiles.WHISPERER;
+		return BossProjectiles.DEFAULT;
 	}
 }

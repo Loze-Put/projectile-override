@@ -2,6 +2,7 @@ package com.projectileoverride;
 
 public enum BossProjectiles
 {
+	DEFAULT("Default"),
 	DOOM_OF_MOKHAIOTL("Doom"),
 	HUEYCOATL("Hueycoatl"),
 	HUNLLEF_NORMAL("Hunllef"),

@@ -48,6 +48,10 @@ public class ProjectileOverridePlugin extends Plugin
 
 	@Subscribe
 	public void onConfigChanged(ConfigChanged event) {
+		if(!ProjectileOverrideConfig.CONFIG_GROUP.equals(event.getGroup())) {
+			return;
+		}
+
 		createOverrideMap();
 	}
 
@@ -62,13 +66,13 @@ public class ProjectileOverridePlugin extends Plugin
 			return;
 		}
 
-		int overrideId = overrideMap.getOrDefault(projectile.getId(), -1);
+		int overrideId = overrideMap.getOrDefault(projectile.getId(), ProjectileIds.NONE);
 
 		if (overrideId >= 0) {
 			overridden.add(replaceProjectile(projectile, overrideId));
 
-			// Some bosses (Leviathan, Whisperer) can have multiple projectiles active. Assume a projectile no longer
-			// exists after five others have been seen.
+			// Some bosses (Leviathan, Whisperer, Inferno blobs) can have multiple projectiles active. Assume a
+			// projectile no longer exists after five others have been seen.
 			if (overridden.size() > 5) {
 				overridden.remove(0);
 			}
@@ -90,6 +94,8 @@ public class ProjectileOverridePlugin extends Plugin
 
 		// Hide the original projectile.
 		projectile.setEndCycle(0);
+
+		log.debug("Overriding projectile {} with {}", projectile.getId(), overrideId);
 
 		return override;
 	}
@@ -115,7 +121,9 @@ public class ProjectileOverridePlugin extends Plugin
 		var overrideIds = getProjectileIdsForBoss(override);
 
 		for (var i = 0; i < sourceIds.length; i++) {
-			if (sourceIds[i] >= 0 && overrideIds[0] >= 0 && sourceIds[i] != overrideIds[i]) {
+			if (sourceIds[i] != ProjectileIds.NONE &&
+				overrideIds[i] != ProjectileIds.NONE &&
+				sourceIds[i] != overrideIds[i]) {
 				overrideMap.put(sourceIds[i], overrideIds[i]);
 			}
 		}
@@ -136,7 +144,6 @@ public class ProjectileOverridePlugin extends Plugin
 			case WARDENS: return ProjectileIds.WARDENS;
 			case WHISPERER: return ProjectileIds.WHISPERER;
 			default:
-				log.warn(String.format("No projectiles mapped for boss '%s'", boss));
 				return new int[] {ProjectileIds.NONE, ProjectileIds.NONE, ProjectileIds.NONE};
 		}
 	}
