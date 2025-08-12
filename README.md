@@ -8,6 +8,8 @@ Boss projectiles can be replaced by any other bosses' projectiles. Note that not
 
 | Boss                | Supports melee |
 | ------------------- | -------------- |
+| Cerberus            | ❌              |
+| Dagganoth Kings     | ❌              |
 | Doom of Mokhaiotl   | ✅              |
 | Hueycoatl           | ✅              |
 | Hunllef (normal)    | ❌              |
@@ -20,3 +22,4 @@ Boss projectiles can be replaced by any other bosses' projectiles. Note that not
 | Vardorvis           | ❌              |
 | Wardens             | ❌              |
 | Whisperer           | ❌              |
+| Zulrah              | ❌              |

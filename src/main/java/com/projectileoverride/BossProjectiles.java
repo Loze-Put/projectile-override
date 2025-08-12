@@ -3,6 +3,8 @@ package com.projectileoverride;
 public enum BossProjectiles
 {
 	DEFAULT("Default"),
+	CERBERUS("Cerberus"),
+	DAGGANOTH_KINGS("DKS"),
 	DOOM_OF_MOKHAIOTL("Doom"),
 	HUEYCOATL("Hueycoatl"),
 	HUNLLEF_NORMAL("Hunllef"),
@@ -14,7 +16,8 @@ public enum BossProjectiles
 	SOTETSEG("SOTETSEG"),
 	VARDORVIS("Vardorvis"),
 	WARDENS("Wardens"),
-	WHISPERER("Whisperer");
+	WHISPERER("Whisperer"),
+	ZULRAH("Zulrah");
 
 	public final String name;
 

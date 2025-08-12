@@ -10,6 +10,24 @@ public interface ProjectileOverrideConfig extends Config
 	public static final String CONFIG_GROUP = "projectileoverride";
 
 	@ConfigItem(
+		keyName = "cerberus",
+		name = "Cerberus",
+		description = "Projectile override for Cerberus"
+	)
+	default BossProjectiles Cerberus() {
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
+		keyName = "dks",
+		name = "Dagganoth Kings",
+		description = "Projectile override for the Dagganoth Kings"
+	)
+	default BossProjectiles DagganothKings() {
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
 		keyName = "dom",
 		name = "Doom of Mokhaiotl",
 		description = "Projectile override for Doom of Mokhaiotl"
@@ -115,6 +133,15 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for the Whisperer"
 	)
 	default BossProjectiles Whisperer() {
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
+		keyName = "zulrah",
+		name = "Zulrah",
+		description = "Projectile override for Zulrah"
+	)
+	default BossProjectiles Zulrah() {
 		return BossProjectiles.DEFAULT;
 	}
 }

@@ -102,6 +102,8 @@ public class ProjectileOverridePlugin extends Plugin
 
 	private void createOverrideMap() {
 		overrideMap.clear();
+		hydrateOverrideMap(BossProjectiles.CERBERUS, config.Cerberus());
+		hydrateOverrideMap(BossProjectiles.DAGGANOTH_KINGS, config.DagganothKings());
 		hydrateOverrideMap(BossProjectiles.DOOM_OF_MOKHAIOTL, config.DoomOfMokhaiotl());
 		hydrateOverrideMap(BossProjectiles.HUEYCOATL, config.Hueycoatl());
 		hydrateOverrideMap(BossProjectiles.HUNLLEF_NORMAL, config.HunllefNormal());
@@ -114,6 +116,7 @@ public class ProjectileOverridePlugin extends Plugin
 		hydrateOverrideMap(BossProjectiles.VARDORVIS, config.Vardorvis());
 		hydrateOverrideMap(BossProjectiles.WARDENS, config.Wardens());
 		hydrateOverrideMap(BossProjectiles.WHISPERER, config.Whisperer());
+		hydrateOverrideMap(BossProjectiles.ZULRAH, config.Zulrah());
 	}
 
 	private void hydrateOverrideMap(BossProjectiles source, BossProjectiles override) {
@@ -131,6 +134,8 @@ public class ProjectileOverridePlugin extends Plugin
 
 	private int[] getProjectileIdsForBoss(BossProjectiles boss) {
 		switch (boss) {
+			case CERBERUS: return ProjectileIds.CERBERUS;
+			case DAGGANOTH_KINGS: return ProjectileIds.DAGGANOTH_KINGS;
 			case DOOM_OF_MOKHAIOTL: return ProjectileIds.DOOM_OF_MOKHAIOTL;
 			case HUEYCOATL: return ProjectileIds.HUEYCOATL;
 			case HUNLLEF_NORMAL: return ProjectileIds.HUNLLEF_NORMAL;
@@ -143,6 +148,7 @@ public class ProjectileOverridePlugin extends Plugin
 			case VARDORVIS: return ProjectileIds.VARDORVIS;
 			case WARDENS: return ProjectileIds.WARDENS;
 			case WHISPERER: return ProjectileIds.WHISPERER;
+			case ZULRAH: return ProjectileIds.ZULRAH;
 			default:
 				return new int[] {ProjectileIds.NONE, ProjectileIds.NONE, ProjectileIds.NONE};
 		}
