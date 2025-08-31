@@ -38,6 +38,16 @@ public interface ProjectileOverrideConfig extends Config
 	}
 
 	@ConfigItem(
+		keyName = "dom-rocks",
+		name = "Doom of Mokhaiotl rocks",
+		description = "Projectile override for Doom of Mokhaiotl rocks"
+	)
+	default BossProjectiles DoomOfMokhaiotlRocks()
+	{
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
 		keyName = "hueycoatl",
 		name = "Hueycoatl",
 		description = "Projectile override for Hueycoatl"
@@ -133,6 +143,26 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for the Whisperer"
 	)
 	default BossProjectiles Whisperer() {
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
+		keyName = "zebak",
+		name = "Zebak",
+		description = "Projectile override for regular Zebak attacks"
+	)
+	default BossProjectiles Zebak()
+	{
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
+		keyName = "zebak-rocks",
+		name = "Zebak rocks",
+		description = "Projectile override for the rocks and jugs attacks of Zebak"
+	)
+	default BossProjectiles ZebakRocks()
+	{
 		return BossProjectiles.DEFAULT;
 	}
 

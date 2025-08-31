@@ -10,6 +10,7 @@ public final class ProjectileIds
 	public static final int[] CERBERUS = new int[] {1242, 1245, NONE};
 	public static final int[] DAGGANOTH_KINGS = new int[] {162, 475, NONE};
 	public static final int[] DOOM_OF_MOKHAIOTL = new int[] {3379, 3380, 3378};
+	public static final int[] DOOM_OF_MOKHAIOTL_ROCKS = new int[] {3385, 3384, NONE};
 	public static final int[] HUEYCOATL = new int[] {2975, 2972, 2969};
 	public static final int[] HUNLLEF_NORMAL = new int[] {1707, 1711, NONE};
 	public static final int[] HUNLLEF_CORRUPTED = new int[] {1708, 1712, NONE};
@@ -21,6 +22,8 @@ public final class ProjectileIds
 	public static final int[] VARDORVIS = new int[] {2520, 2521, NONE};
 	public static final int[] WARDENS = new int[] {2224, 2241, NONE};
 	public static final int[] WHISPERER = new int[] {2445, 2444, NONE};
+	public static final int[] ZEBAK = new int[] {2181, 2187, NONE};
+	public static final int[] ZEBAK_ROCKS = new int[] {2176, 2178, NONE};
 	public static final int[] ZULRAH = new int[] {1046, 1044, NONE};
 
 	private ProjectileIds() {}

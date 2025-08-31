@@ -26,9 +26,9 @@ public class ProjectileOverridePlugin extends Plugin
 	@Inject
 	private ProjectileOverrideConfig config;
 
-	private HashMap<Integer, Integer> overrideMap = new HashMap<>();
+	private HashMap<Integer, ProjectileOverride> overrideMap = new HashMap<>();
 
-	private ArrayList<Projectile> overridden = new ArrayList<>();
+	private ArrayList<Projectile> overriddenProjectiles = new ArrayList<>();
 
 	@Provides
 	ProjectileOverrideConfig provideConfig(ConfigManager configManager)
@@ -43,7 +43,7 @@ public class ProjectileOverridePlugin extends Plugin
 
 	@Override
 	protected void shutDown() throws Exception {
-		overridden.clear();
+		overriddenProjectiles.clear();
 	}
 
 	@Subscribe
@@ -62,27 +62,27 @@ public class ProjectileOverridePlugin extends Plugin
 
 		// Prevent overriding projectiles that have already been overridden. This can happen if a player has configured
 		// Boss A -> Boss B, Boss B -> Boss C. This will result in Boss A -> Boss C (instead of Boss B).
-		if (overridden.contains(projectile)) {
+		if (overriddenProjectiles.contains(projectile)) {
 			return;
 		}
 
-		int overrideId = overrideMap.getOrDefault(projectile.getId(), ProjectileIds.NONE);
+		ProjectileOverride override = overrideMap.getOrDefault(projectile.getId(), null);
 
-		if (overrideId != ProjectileIds.NONE) {
-			overridden.add(replaceProjectile(projectile, overrideId));
+		if (override != null && override.canOverride(projectile)) {
+			overriddenProjectiles.add(replaceProjectile(projectile, override));
 
 			// Some bosses (Leviathan, Whisperer, Inferno blobs) can have multiple projectiles active. Assume a
 			// projectile no longer exists after five others have been seen.
-			if (overridden.size() > 5) {
-				overridden.remove(0);
+			if (overriddenProjectiles.size() > 5) {
+				overriddenProjectiles.remove(0);
 			}
 		}
 	}
 
-	private Projectile replaceProjectile(Projectile projectile, int overrideId)
+	private Projectile replaceProjectile(Projectile projectile, ProjectileOverride override)
 	{
-		Projectile override = client.createProjectile(
-			overrideId,
+		Projectile overrideProjectile = client.createProjectile(
+			override.getOverrideProjectileId(),
 			projectile.getSourcePoint(),
 			projectile.getStartHeight(), projectile.getSourceActor(),
 			projectile.getTargetPoint(),
@@ -90,14 +90,14 @@ public class ProjectileOverridePlugin extends Plugin
 			projectile.getStartCycle(), projectile.getEndCycle(),
 			projectile.getSlope(), projectile.getStartPos());
 
-		client.getProjectiles().addLast(override);
+		client.getProjectiles().addLast(overrideProjectile);
+
+		log.debug("Overriding projectile {} with {}", projectile.getId(), override.getOverrideProjectileId());
 
 		// Hide the original projectile.
 		projectile.setEndCycle(0);
 
-		log.debug("Overriding projectile {} with {}", projectile.getId(), overrideId);
-
-		return override;
+		return overrideProjectile;
 	}
 
 	private void createOverrideMap() {
@@ -105,6 +105,7 @@ public class ProjectileOverridePlugin extends Plugin
 		hydrateOverrideMap(BossProjectiles.CERBERUS, config.Cerberus());
 		hydrateOverrideMap(BossProjectiles.DAGGANOTH_KINGS, config.DagganothKings());
 		hydrateOverrideMap(BossProjectiles.DOOM_OF_MOKHAIOTL, config.DoomOfMokhaiotl());
+		hydrateOverrideMap(BossProjectiles.DOOM_OF_MOKHAIOTL_ROCKS, config.DoomOfMokhaiotlRocks());
 		hydrateOverrideMap(BossProjectiles.HUEYCOATL, config.Hueycoatl());
 		hydrateOverrideMap(BossProjectiles.HUNLLEF_NORMAL, config.HunllefNormal());
 		hydrateOverrideMap(BossProjectiles.HUNLLEF_CORRUPTED, config.HunllefCorrupted());
@@ -116,18 +117,21 @@ public class ProjectileOverridePlugin extends Plugin
 		hydrateOverrideMap(BossProjectiles.VARDORVIS, config.Vardorvis());
 		hydrateOverrideMap(BossProjectiles.WARDENS, config.Wardens());
 		hydrateOverrideMap(BossProjectiles.WHISPERER, config.Whisperer());
+		hydrateOverrideMap(BossProjectiles.ZEBAK, config.Zebak());
+		hydrateOverrideMap(BossProjectiles.ZEBAK_ROCKS, config.ZebakRocks());
 		hydrateOverrideMap(BossProjectiles.ZULRAH, config.Zulrah());
 	}
 
 	private void hydrateOverrideMap(BossProjectiles source, BossProjectiles override) {
 		var sourceIds = getProjectileIdsForBoss(source);
 		var overrideIds = getProjectileIdsForBoss(override);
+		var requiredRegion = getRegionIdsForBoss(source);
 
 		for (var i = 0; i < sourceIds.length; i++) {
 			if (sourceIds[i] != ProjectileIds.NONE &&
 				overrideIds[i] != ProjectileIds.NONE &&
 				sourceIds[i] != overrideIds[i]) {
-				overrideMap.put(sourceIds[i], overrideIds[i]);
+				overrideMap.put(sourceIds[i], new ProjectileOverride(overrideIds[i], requiredRegion));
 			}
 		}
 	}
@@ -137,6 +141,7 @@ public class ProjectileOverridePlugin extends Plugin
 			case CERBERUS: return ProjectileIds.CERBERUS;
 			case DAGGANOTH_KINGS: return ProjectileIds.DAGGANOTH_KINGS;
 			case DOOM_OF_MOKHAIOTL: return ProjectileIds.DOOM_OF_MOKHAIOTL;
+			case DOOM_OF_MOKHAIOTL_ROCKS: return ProjectileIds.DOOM_OF_MOKHAIOTL_ROCKS;
 			case HUEYCOATL: return ProjectileIds.HUEYCOATL;
 			case HUNLLEF_NORMAL: return ProjectileIds.HUNLLEF_NORMAL;
 			case HUNLLEF_CORRUPTED: return ProjectileIds.HUNLLEF_CORRUPTED;
@@ -148,9 +153,23 @@ public class ProjectileOverridePlugin extends Plugin
 			case VARDORVIS: return ProjectileIds.VARDORVIS;
 			case WARDENS: return ProjectileIds.WARDENS;
 			case WHISPERER: return ProjectileIds.WHISPERER;
+			case ZEBAK: return ProjectileIds.ZEBAK;
+			case ZEBAK_ROCKS: return ProjectileIds.ZEBAK_ROCKS;
 			case ZULRAH: return ProjectileIds.ZULRAH;
 			default:
 				return new int[] {ProjectileIds.NONE, ProjectileIds.NONE, ProjectileIds.NONE};
+		}
+	}
+
+	/**
+	 * Gets the required region ids for the boss. Most bosses have unique projectiles so there is no need to configure
+	 * regions.
+	 */
+	private int[] getRegionIdsForBoss(BossProjectiles boss) {
+		switch (boss) {
+			case DAGGANOTH_KINGS: return RegionIds.DAGGANOTH_KINGS;
+			default:
+				return RegionIds.NONE;
 		}
 	}
 }

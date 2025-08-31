@@ -6,6 +6,7 @@ public enum BossProjectiles
 	CERBERUS("Cerberus"),
 	DAGGANOTH_KINGS("DKS"),
 	DOOM_OF_MOKHAIOTL("Doom"),
+	DOOM_OF_MOKHAIOTL_ROCKS("Doom rocks"),
 	HUEYCOATL("Hueycoatl"),
 	HUNLLEF_NORMAL("Hunllef"),
 	HUNLLEF_CORRUPTED("Hunllef (c)"),
@@ -17,6 +18,8 @@ public enum BossProjectiles
 	VARDORVIS("Vardorvis"),
 	WARDENS("Wardens"),
 	WHISPERER("Whisperer"),
+	ZEBAK("Zebak"),
+	ZEBAK_ROCKS("Zebak rocks"),
 	ZULRAH("Zulrah");
 
 	public final String name;
