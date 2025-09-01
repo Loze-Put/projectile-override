@@ -3,6 +3,7 @@ package com.projectileoverride;
 import com.google.inject.Provides;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
@@ -28,7 +29,7 @@ public class ProjectileOverridePlugin extends Plugin
 
 	private HashMap<Integer, ProjectileOverride> overrideMap = new HashMap<>();
 
-	private ArrayList<Projectile> overriddenProjectiles = new ArrayList<>();
+	private HashSet<Projectile> overriddenProjectiles = new HashSet<>();
 
 	@Provides
 	ProjectileOverrideConfig provideConfig(ConfigManager configManager)
@@ -61,7 +62,8 @@ public class ProjectileOverridePlugin extends Plugin
 		Projectile projectile = projectileMoved.getProjectile();
 
 		// Prevent overriding projectiles that have already been overridden. This can happen if a player has configured
-		// Boss A -> Boss B, Boss B -> Boss C. This will result in Boss A -> Boss C (instead of Boss B).
+		// Boss A -> Boss B, Boss B -> Boss C. This will result in Boss A -> Boss C (instead of Boss B). Let's not talk
+		// about what happens when you configure Boss A -> Boss B and Boss B -> Boss A.
 		if (overriddenProjectiles.contains(projectile)) {
 			return;
 		}
@@ -69,13 +71,8 @@ public class ProjectileOverridePlugin extends Plugin
 		ProjectileOverride override = overrideMap.getOrDefault(projectile.getId(), null);
 
 		if (override != null && override.canOverride(projectile)) {
+			overriddenProjectiles.removeIf(p -> p.getRemainingCycles() < 0);
 			overriddenProjectiles.add(replaceProjectile(projectile, override));
-
-			// Some bosses (Leviathan, Whisperer, Inferno blobs) can have multiple projectiles active. Assume a
-			// projectile no longer exists after five others have been seen.
-			if (overriddenProjectiles.size() > 5) {
-				overriddenProjectiles.remove(0);
-			}
 		}
 	}
 

@@ -6,20 +6,23 @@ This plugin replaces boss projectiles with alternatives that are easier to disti
 
 Boss projectiles can be replaced by any other bosses' projectiles. Note that not all bosses support melee projectiles. If a boss with melee projectiles is overridden by a boss without melee projectiles, the melee projectiles will still show as their original. The following bosses are currently supported:
 
-| Boss                | Supports melee |
-| ------------------- | -------------- |
-| Cerberus            | ❌              |
-| Dagganoth Kings     | ❌              |
-| Doom of Mokhaiotl   | ✅              |
-| Hueycoatl           | ✅              |
-| Hunllef (normal)    | ❌              |
-| Hunllef (corrupted) | ❌              |
-| Inferno blobs       | ❌              |
-| Leviathan           | ✅              |
-| Olm                 | ✅              |
-| Scurrius            | ❌              |
-| Sotetseg            | ❌              |
-| Vardorvis           | ❌              |
-| Wardens             | ❌              |
-| Whisperer           | ❌              |
-| Zulrah              | ❌              |
+| Boss                    | Supports melee |
+| ----------------------- | -------------- |
+| Cerberus                | ❌              |
+| Dagganoth Kings         | ❌              |
+| Doom of Mokhaiotl       | ✅              |
+| Doom of Mokhaiotl rocks | ❌              |
+| Hueycoatl               | ✅              |
+| Hunllef (normal)        | ❌              |
+| Hunllef (corrupted)     | ❌              |
+| Inferno blobs           | ❌              |
+| Leviathan               | ✅              |
+| Olm                     | ✅              |
+| Scurrius                | ❌              |
+| Sotetseg                | ❌              |
+| Vardorvis               | ❌              |
+| Wardens                 | ❌              |
+| Whisperer               | ❌              |
+| Zebak                   | ❌              |
+| Zebak rocks and jugs    | ❌              |
+| Zulrah                  | ❌              |
