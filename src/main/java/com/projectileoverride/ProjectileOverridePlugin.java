@@ -27,9 +27,9 @@ public class ProjectileOverridePlugin extends Plugin
 	@Inject
 	private ProjectileOverrideConfig config;
 
-	private HashMap<Integer, ProjectileOverride> overrideMap = new HashMap<>();
+	private final HashMap<Integer, ProjectileOverride> overrideMap = new HashMap<>();
 
-	private HashSet<Projectile> overriddenProjectiles = new HashSet<>();
+	private final HashSet<Projectile> overriddenProjectiles = new HashSet<>();
 
 	@Provides
 	ProjectileOverrideConfig provideConfig(ConfigManager configManager)
@@ -99,6 +99,7 @@ public class ProjectileOverridePlugin extends Plugin
 
 	private void createOverrideMap() {
 		overrideMap.clear();
+        hydrateOverrideMap(BossProjectiles.AKKHA, config.Akkha());
 		hydrateOverrideMap(BossProjectiles.CERBERUS, config.Cerberus());
 		hydrateOverrideMap(BossProjectiles.DAGGANOTH_KINGS, config.DagganothKings());
 		hydrateOverrideMap(BossProjectiles.DOOM_OF_MOKHAIOTL, config.DoomOfMokhaiotl());
@@ -106,13 +107,17 @@ public class ProjectileOverridePlugin extends Plugin
 		hydrateOverrideMap(BossProjectiles.HUEYCOATL, config.Hueycoatl());
 		hydrateOverrideMap(BossProjectiles.HUNLLEF_NORMAL, config.HunllefNormal());
 		hydrateOverrideMap(BossProjectiles.HUNLLEF_CORRUPTED, config.HunllefCorrupted());
+        hydrateOverrideMap(BossProjectiles.HYDRA, config.AlchemicalHydra());
 		hydrateOverrideMap(BossProjectiles.INFERNO, config.Inferno());
+        hydrateOverrideMap(BossProjectiles.KALPHITE_QUEEN, config.KalphiteQueen());
+        hydrateOverrideMap(BossProjectiles.KREE_ARRA, config.KreeArra());
 		hydrateOverrideMap(BossProjectiles.LEVIATHAN, config.Leviathan());
 		hydrateOverrideMap(BossProjectiles.OLM, config.Olm());
 		hydrateOverrideMap(BossProjectiles.SCURRIUS, config.Scurrius());
 		hydrateOverrideMap(BossProjectiles.SOTETSEG, config.Sotetseg());
 		hydrateOverrideMap(BossProjectiles.VARDORVIS, config.Vardorvis());
 		hydrateOverrideMap(BossProjectiles.WARDENS, config.Wardens());
+        hydrateOverrideMap(BossProjectiles.WARDENS_DIVINE, config.WardensDivine());
 		hydrateOverrideMap(BossProjectiles.WHISPERER, config.Whisperer());
 		hydrateOverrideMap(BossProjectiles.ZEBAK, config.Zebak());
 		hydrateOverrideMap(BossProjectiles.ZEBAK_ROCKS, config.ZebakRocks());
@@ -135,6 +140,7 @@ public class ProjectileOverridePlugin extends Plugin
 
 	private int[] getProjectileIdsForBoss(BossProjectiles boss) {
 		switch (boss) {
+            case AKKHA: return ProjectileIds.AKKHA;
 			case CERBERUS: return ProjectileIds.CERBERUS;
 			case DAGGANOTH_KINGS: return ProjectileIds.DAGGANOTH_KINGS;
 			case DOOM_OF_MOKHAIOTL: return ProjectileIds.DOOM_OF_MOKHAIOTL;
@@ -142,13 +148,17 @@ public class ProjectileOverridePlugin extends Plugin
 			case HUEYCOATL: return ProjectileIds.HUEYCOATL;
 			case HUNLLEF_NORMAL: return ProjectileIds.HUNLLEF_NORMAL;
 			case HUNLLEF_CORRUPTED: return ProjectileIds.HUNLLEF_CORRUPTED;
+            case HYDRA: return ProjectileIds.HYDRA;
 			case INFERNO: return ProjectileIds.INFERNO;
+            case KALPHITE_QUEEN: return ProjectileIds.KALPHITE_QUEEN;
+            case KREE_ARRA: return ProjectileIds.KREE_ARRA;
 			case LEVIATHAN: return ProjectileIds.LEVIATHAN;
 			case OLM: return ProjectileIds.OLM;
 			case SCURRIUS: return ProjectileIds.SCRURRIUS;
 			case SOTETSEG: return ProjectileIds.SOTETSEG;
 			case VARDORVIS: return ProjectileIds.VARDORVIS;
 			case WARDENS: return ProjectileIds.WARDENS;
+            case WARDENS_DIVINE: return ProjectileIds.WARDENS_DIVINE;
 			case WHISPERER: return ProjectileIds.WHISPERER;
 			case ZEBAK: return ProjectileIds.ZEBAK;
 			case ZEBAK_ROCKS: return ProjectileIds.ZEBAK_ROCKS;

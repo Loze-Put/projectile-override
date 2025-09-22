@@ -6,9 +6,9 @@ import net.runelite.api.Projectile;
 public class ProjectileOverride
 {
 	@Getter
-	private int overrideProjectileId;
+	private final int overrideProjectileId;
 
-	private int[] requiredRegion;
+	private final int[] requiredRegion;
 
     public ProjectileOverride(int overrideProjectileId, int[] requiredRegion) {
 		this.overrideProjectileId = overrideProjectileId;

@@ -3,6 +3,12 @@
 All notable changes to this plugin will be documented in this file.
 
 ----------------------------------------------------------------------
+## [1.0.3] - 2025-09-22
+### Added
+- Added Akkha, Hydra, Kalphite Queen, Kree Arra, Wardens divine.
+### Changed
+- Changed some boss names in the config to be improve readability.
+
 ## [1.0.2] - 2025-08-31
 ### Added
 - Added Doom rocks, Zebak and Zebak rocks.

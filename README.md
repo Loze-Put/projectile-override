@@ -8,6 +8,7 @@ Boss projectiles can be replaced by any other bosses' projectiles. Note that not
 
 | Boss                    | Supports melee |
 | ----------------------- | -------------- |
+| Akkha                   | ❌              |
 | Cerberus                | ❌              |
 | Dagganoth Kings         | ❌              |
 | Doom of Mokhaiotl       | ✅              |
@@ -15,13 +16,17 @@ Boss projectiles can be replaced by any other bosses' projectiles. Note that not
 | Hueycoatl               | ✅              |
 | Hunllef (normal)        | ❌              |
 | Hunllef (corrupted)     | ❌              |
+| Hydra                   | ❌              |
 | Inferno blobs           | ❌              |
+| Kalphite Queen          | ❌              |
+| Kree Arra               | ❌              |
 | Leviathan               | ✅              |
 | Olm                     | ✅              |
 | Scurrius                | ❌              |
 | Sotetseg                | ❌              |
 | Vardorvis               | ❌              |
 | Wardens                 | ❌              |
+| Wardens divine          | ✅              |
 | Whisperer               | ❌              |
 | Zebak                   | ❌              |
 | Zebak rocks and jugs    | ❌              |

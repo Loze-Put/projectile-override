@@ -9,6 +9,15 @@ public interface ProjectileOverrideConfig extends Config
 {
 	public static final String CONFIG_GROUP = "projectileoverride";
 
+    @ConfigItem(
+        keyName = "akkha",
+        name = "Akkha",
+        description = "Projectile override for Akkha"
+    )
+    default BossProjectiles Akkha() {
+        return BossProjectiles.DEFAULT;
+    }
+
 	@ConfigItem(
 		keyName = "cerberus",
 		name = "Cerberus",
@@ -20,7 +29,7 @@ public interface ProjectileOverrideConfig extends Config
 
 	@ConfigItem(
 		keyName = "dks",
-		name = "Dagganoth Kings",
+		name = "DKS",
 		description = "Projectile override for the Dagganoth Kings"
 	)
 	default BossProjectiles DagganothKings() {
@@ -29,7 +38,7 @@ public interface ProjectileOverrideConfig extends Config
 
 	@ConfigItem(
 		keyName = "dom",
-		name = "Doom of Mokhaiotl",
+		name = "Doom",
 		description = "Projectile override for Doom of Mokhaiotl"
 	)
 	default BossProjectiles DoomOfMokhaiotl()
@@ -39,7 +48,7 @@ public interface ProjectileOverrideConfig extends Config
 
 	@ConfigItem(
 		keyName = "dom-rocks",
-		name = "Doom of Mokhaiotl rocks",
+		name = "Doom rocks",
 		description = "Projectile override for Doom of Mokhaiotl rocks"
 	)
 	default BossProjectiles DoomOfMokhaiotlRocks()
@@ -74,6 +83,15 @@ public interface ProjectileOverrideConfig extends Config
 		return BossProjectiles.DEFAULT;
 	}
 
+    @ConfigItem(
+            keyName = "hdyra",
+            name = "Hydra",
+            description = "Projectile override for Alchemical Hydra and smaller hydras"
+    )
+    default BossProjectiles AlchemicalHydra() {
+        return BossProjectiles.DEFAULT;
+    }
+
 	@ConfigItem(
 		keyName = "inferno",
 		name = "Inferno",
@@ -82,6 +100,24 @@ public interface ProjectileOverrideConfig extends Config
 	default BossProjectiles Inferno() {
 		return BossProjectiles.DEFAULT;
 	}
+
+    @ConfigItem(
+        keyName = "kalphite-queen",
+        name = "Kalphite Queen",
+        description = "Projectile override for the Kalphite Queen."
+    )
+    default BossProjectiles KalphiteQueen() {
+        return BossProjectiles.DEFAULT;
+    }
+
+    @ConfigItem(
+        keyName = "kree-arra",
+        name = "Kree Arra",
+        description = "Projectile override for Kree Arra"
+    )
+    default BossProjectiles KreeArra() {
+        return BossProjectiles.DEFAULT;
+    }
 
 	@ConfigItem(
 		keyName = "leviathan",
@@ -136,6 +172,15 @@ public interface ProjectileOverrideConfig extends Config
 	default BossProjectiles Wardens() {
 		return BossProjectiles.DEFAULT;
 	}
+
+    @ConfigItem(
+        keyName = "wardens-divine",
+        name = "Wardens divine",
+        description = "Projectile override for the divine projectiles of the Wardens in the Tombs of Amascut"
+    )
+    default BossProjectiles WardensDivine() {
+        return BossProjectiles.DEFAULT;
+    }
 
 	@ConfigItem(
 		keyName = "whisperer",
