@@ -3,6 +3,10 @@
 All notable changes to this plugin will be documented in this file.
 
 ----------------------------------------------------------------------
+## [1.0.4] - 2025-09-26
+### Added
+- Added Manticore and Random.
+
 ## [1.0.3] - 2025-09-22
 ### Added
 - Added Akkha, Hydra, Kalphite Queen, Kree Arra, Wardens divine.

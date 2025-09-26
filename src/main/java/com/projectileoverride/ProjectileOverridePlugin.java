@@ -112,6 +112,7 @@ public class ProjectileOverridePlugin extends Plugin
         hydrateOverrideMap(BossProjectiles.KALPHITE_QUEEN, config.KalphiteQueen());
         hydrateOverrideMap(BossProjectiles.KREE_ARRA, config.KreeArra());
 		hydrateOverrideMap(BossProjectiles.LEVIATHAN, config.Leviathan());
+        hydrateOverrideMap(BossProjectiles.MANTICORE, config.Manticore());
 		hydrateOverrideMap(BossProjectiles.OLM, config.Olm());
 		hydrateOverrideMap(BossProjectiles.SCURRIUS, config.Scurrius());
 		hydrateOverrideMap(BossProjectiles.SOTETSEG, config.Sotetseg());
@@ -133,7 +134,7 @@ public class ProjectileOverridePlugin extends Plugin
 			if (sourceIds[i] != ProjectileIds.NONE &&
 				overrideIds[i] != ProjectileIds.NONE &&
 				sourceIds[i] != overrideIds[i]) {
-				overrideMap.put(sourceIds[i], new ProjectileOverride(overrideIds[i], requiredRegion));
+				overrideMap.put(sourceIds[i], new ProjectileOverride(overrideIds[i], i, requiredRegion));
 			}
 		}
 	}
@@ -153,6 +154,7 @@ public class ProjectileOverridePlugin extends Plugin
             case KALPHITE_QUEEN: return ProjectileIds.KALPHITE_QUEEN;
             case KREE_ARRA: return ProjectileIds.KREE_ARRA;
 			case LEVIATHAN: return ProjectileIds.LEVIATHAN;
+            case MANTICORE: return ProjectileIds.MANTICORE;
 			case OLM: return ProjectileIds.OLM;
 			case SCURRIUS: return ProjectileIds.SCRURRIUS;
 			case SOTETSEG: return ProjectileIds.SOTETSEG;
@@ -163,6 +165,8 @@ public class ProjectileOverridePlugin extends Plugin
 			case ZEBAK: return ProjectileIds.ZEBAK;
 			case ZEBAK_ROCKS: return ProjectileIds.ZEBAK_ROCKS;
 			case ZULRAH: return ProjectileIds.ZULRAH;
+            case RANDOM:
+                return new int[] {ProjectileIds.RANDOM, ProjectileIds.RANDOM, ProjectileIds.RANDOM};
 			default:
 				return new int[] {ProjectileIds.NONE, ProjectileIds.NONE, ProjectileIds.NONE};
 		}

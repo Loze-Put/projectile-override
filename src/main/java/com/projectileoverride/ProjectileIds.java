@@ -1,10 +1,13 @@
 package com.projectileoverride;
 
-import java.rmi.NotBoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public final class ProjectileIds
 {
 	public static final int NONE = -1;
+    public static final int RANDOM = -2;
 
 	// All ids are Mage, Ranged, Melee.
     public static final int[] AKKHA = new int[] {2253, 2255, NONE};
@@ -20,6 +23,7 @@ public final class ProjectileIds
     public static final int[] KALPHITE_QUEEN = new int[] {280, 288, NONE};
     public static final int[] KREE_ARRA = new int[] {1200, 1199, NONE};
 	public static final int[] LEVIATHAN = new int[] {2489, 2487, 2488};
+    public static final int[] MANTICORE = new int[] {2681, 2683, 2685};
 	public static final int[] OLM = new int[] {1341, 1343, 1345};
 	public static final int[] SCRURRIUS = new int[] {2640, 2642, NONE};
 	public static final int[] SOTETSEG = new int[] {1606, 1607, NONE};
@@ -31,5 +35,54 @@ public final class ProjectileIds
 	public static final int[] ZEBAK_ROCKS = new int[] {2176, 2178, NONE};
 	public static final int[] ZULRAH = new int[] {1046, 1044, NONE};
 
+    private static final List<Integer>[] ALL_PROJECTILES_PER_STYLE = buildPoolPerStyle();
+
 	private ProjectileIds() {}
+
+    public static int getRandomProjectile(int style) {
+        var pool = ALL_PROJECTILES_PER_STYLE[style];
+        return pool.get(ThreadLocalRandom.current().nextInt(pool.size()));
+    }
+
+    @SuppressWarnings("unchecked")
+    private static List<Integer>[] buildPoolPerStyle() {
+        var allProjectiles = new int[][] {
+                AKKHA,
+                CERBERUS,
+                DAGGANOTH_KINGS,
+                DOOM_OF_MOKHAIOTL,
+                DOOM_OF_MOKHAIOTL_ROCKS,
+                HUEYCOATL,
+                HUNLLEF_NORMAL,
+                HUNLLEF_CORRUPTED,
+                HYDRA,
+                INFERNO,
+                KALPHITE_QUEEN,
+                KREE_ARRA,
+                LEVIATHAN,
+                MANTICORE,
+                OLM,
+                SCRURRIUS,
+                SOTETSEG,
+                VARDORVIS,
+                WARDENS,
+                WARDENS_DIVINE,
+                WHISPERER,
+                ZEBAK,
+                ZEBAK_ROCKS,
+                ZULRAH
+        };
+
+        List<Integer>[] pools = new List[]{new ArrayList<>(), new ArrayList<>(), new ArrayList<>()};
+
+        for (int[] set : allProjectiles) {
+            for (int i = 0; i < set.length; i++) {
+                if (set[i] != NONE) {
+                    pools[i].add(set[i]);
+                }
+            }
+        }
+
+        return pools;
+    }
 }

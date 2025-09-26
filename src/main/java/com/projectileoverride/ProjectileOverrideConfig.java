@@ -104,7 +104,7 @@ public interface ProjectileOverrideConfig extends Config
     @ConfigItem(
         keyName = "kalphite-queen",
         name = "Kalphite Queen",
-        description = "Projectile override for the Kalphite Queen."
+        description = "Projectile override for the Kalphite Queen"
     )
     default BossProjectiles KalphiteQueen() {
         return BossProjectiles.DEFAULT;
@@ -127,6 +127,15 @@ public interface ProjectileOverrideConfig extends Config
 	default BossProjectiles Leviathan() {
 		return BossProjectiles.DEFAULT;
 	}
+
+    @ConfigItem(
+        keyName = "manticore",
+        name = "Manticore",
+        description = "Projectile override for Manticores within the Fortis Colosseum"
+    )
+    default BossProjectiles Manticore() {
+        return BossProjectiles.DEFAULT;
+    }
 
 	@ConfigItem(
 		keyName = "olm",

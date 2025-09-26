@@ -3,6 +3,7 @@ package com.projectileoverride;
 public enum BossProjectiles
 {
 	DEFAULT("Default"),
+    RANDOM("Random"),
     AKKHA("Akkha"),
 	CERBERUS("Cerberus"),
 	DAGGANOTH_KINGS("DKS"),
@@ -13,9 +14,10 @@ public enum BossProjectiles
 	HUNLLEF_CORRUPTED("Hunllef (c)"),
     HYDRA("Hydra"),
 	INFERNO("Inferno"),
-	LEVIATHAN("Leviathan"),
     KALPHITE_QUEEN("Kalphite Queen"),
     KREE_ARRA("Kree Arra"),
+    LEVIATHAN("Leviathan"),
+    MANTICORE("Manticore"),
 	OLM("Olm"),
 	SCURRIUS("Scurrius"),
 	SOTETSEG("Sotetseg"),
