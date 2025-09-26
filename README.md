@@ -21,6 +21,7 @@ Boss projectiles can be replaced by any other bosses' projectiles. Note that not
 | Kalphite Queen          | ❌              |
 | Kree Arra               | ❌              |
 | Leviathan               | ✅              |
+| Manticore               | ✅              |
 | Olm                     | ✅              |
 | Scurrius                | ❌              |
 | Sotetseg                | ❌              |
