@@ -27,6 +27,7 @@ public final class ProjectileIds
 	public static final int[] OLM = new int[] {1341, 1343, 1345};
 	public static final int[] SCRURRIUS = new int[] {2640, 2642, NONE};
 	public static final int[] SOTETSEG = new int[] {1606, 1607, NONE};
+    public static final int[] TORMENTED_DEMON = new int[] {2853, 2857, NONE};
 	public static final int[] VARDORVIS = new int[] {2520, 2521, NONE};
 	public static final int[] WARDENS = new int[] {2224, 2241, NONE};
     public static final int[] WARDENS_DIVINE = new int[] {2208, 2206, 2204};
@@ -64,6 +65,7 @@ public final class ProjectileIds
                 OLM,
                 SCRURRIUS,
                 SOTETSEG,
+                TORMENTED_DEMON,
                 VARDORVIS,
                 WARDENS,
                 WARDENS_DIVINE,
