@@ -21,6 +21,7 @@ public enum BossProjectiles
 	OLM("Olm"),
 	SCURRIUS("Scurrius"),
 	SOTETSEG("Sotetseg"),
+	TORMENTED_DEMON("Tormented Demon"),
 	VARDORVIS("Vardorvis"),
 	WARDENS("Wardens"),
     WARDENS_DIVINE("Wardens divine"),

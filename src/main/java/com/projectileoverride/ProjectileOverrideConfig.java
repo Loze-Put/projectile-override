@@ -165,6 +165,15 @@ public interface ProjectileOverrideConfig extends Config
 	}
 
 	@ConfigItem(
+        keyName = "tormented-demon",
+        name = "Tormented Demon",
+        description = "Projectile override for Tormented Demons within the Ancient Guthixian Temple"
+    )
+    default BossProjectiles TormentedDemon() {
+        return BossProjectiles.DEFAULT;
+    }
+
+	@ConfigItem(
 		keyName = "vardorvis",
 		name = "Vardorvis",
 		description = "Projectile override for Vardorvis"

@@ -116,6 +116,7 @@ public class ProjectileOverridePlugin extends Plugin
 		hydrateOverrideMap(BossProjectiles.OLM, config.Olm());
 		hydrateOverrideMap(BossProjectiles.SCURRIUS, config.Scurrius());
 		hydrateOverrideMap(BossProjectiles.SOTETSEG, config.Sotetseg());
+		hydrateOverrideMap(BossProjectiles.TORMENTED_DEMON, config.TormentedDemon());
 		hydrateOverrideMap(BossProjectiles.VARDORVIS, config.Vardorvis());
 		hydrateOverrideMap(BossProjectiles.WARDENS, config.Wardens());
         hydrateOverrideMap(BossProjectiles.WARDENS_DIVINE, config.WardensDivine());
@@ -158,6 +159,7 @@ public class ProjectileOverridePlugin extends Plugin
 			case OLM: return ProjectileIds.OLM;
 			case SCURRIUS: return ProjectileIds.SCRURRIUS;
 			case SOTETSEG: return ProjectileIds.SOTETSEG;
+			case TORMENTED_DEMON: return ProjectileIds.TORMENTED_DEMON;
 			case VARDORVIS: return ProjectileIds.VARDORVIS;
 			case WARDENS: return ProjectileIds.WARDENS;
             case WARDENS_DIVINE: return ProjectileIds.WARDENS_DIVINE;
