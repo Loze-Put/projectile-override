@@ -127,62 +127,10 @@ public class ProjectileOverridePlugin extends Plugin
 	}
 
 	private void hydrateOverrideMap(BossProjectiles source, BossProjectiles override) {
-		var sourceIds = getProjectileIdsForBoss(source);
-		var overrideIds = getProjectileIdsForBoss(override);
-		var requiredRegion = getRegionIdsForBoss(source);
+        var overrides = source.createOverride(override);
 
-		for (var i = 0; i < sourceIds.length; i++) {
-			if (sourceIds[i] != ProjectileIds.NONE &&
-				overrideIds[i] != ProjectileIds.NONE &&
-				sourceIds[i] != overrideIds[i]) {
-				overrideMap.put(sourceIds[i], new ProjectileOverride(overrideIds[i], i, requiredRegion));
-			}
-		}
-	}
-
-	private int[] getProjectileIdsForBoss(BossProjectiles boss) {
-		switch (boss) {
-            case AKKHA: return ProjectileIds.AKKHA;
-			case CERBERUS: return ProjectileIds.CERBERUS;
-			case DAGGANOTH_KINGS: return ProjectileIds.DAGGANOTH_KINGS;
-			case DOOM_OF_MOKHAIOTL: return ProjectileIds.DOOM_OF_MOKHAIOTL;
-			case DOOM_OF_MOKHAIOTL_ROCKS: return ProjectileIds.DOOM_OF_MOKHAIOTL_ROCKS;
-			case HUEYCOATL: return ProjectileIds.HUEYCOATL;
-			case HUNLLEF_NORMAL: return ProjectileIds.HUNLLEF_NORMAL;
-			case HUNLLEF_CORRUPTED: return ProjectileIds.HUNLLEF_CORRUPTED;
-            case HYDRA: return ProjectileIds.HYDRA;
-			case INFERNO: return ProjectileIds.INFERNO;
-            case KALPHITE_QUEEN: return ProjectileIds.KALPHITE_QUEEN;
-            case KREE_ARRA: return ProjectileIds.KREE_ARRA;
-			case LEVIATHAN: return ProjectileIds.LEVIATHAN;
-            case MANTICORE: return ProjectileIds.MANTICORE;
-			case OLM: return ProjectileIds.OLM;
-			case SCURRIUS: return ProjectileIds.SCRURRIUS;
-			case SOTETSEG: return ProjectileIds.SOTETSEG;
-			case TORMENTED_DEMON: return ProjectileIds.TORMENTED_DEMON;
-			case VARDORVIS: return ProjectileIds.VARDORVIS;
-			case WARDENS: return ProjectileIds.WARDENS;
-            case WARDENS_DIVINE: return ProjectileIds.WARDENS_DIVINE;
-			case WHISPERER: return ProjectileIds.WHISPERER;
-			case ZEBAK: return ProjectileIds.ZEBAK;
-			case ZEBAK_ROCKS: return ProjectileIds.ZEBAK_ROCKS;
-			case ZULRAH: return ProjectileIds.ZULRAH;
-            case RANDOM:
-                return new int[] {ProjectileIds.RANDOM, ProjectileIds.RANDOM, ProjectileIds.RANDOM};
-			default:
-				return new int[] {ProjectileIds.NONE, ProjectileIds.NONE, ProjectileIds.NONE};
-		}
-	}
-
-	/**
-	 * Gets the required region ids for the boss. Most bosses have unique projectiles so there is no need to configure
-	 * regions.
-	 */
-	private int[] getRegionIdsForBoss(BossProjectiles boss) {
-		switch (boss) {
-			case DAGGANOTH_KINGS: return RegionIds.DAGGANOTH_KINGS;
-			default:
-				return RegionIds.NONE;
-		}
+        for(var createdOverride: overrides) {
+            overrideMap.put(createdOverride.getSourceProjectileId(), createdOverride);
+        }
 	}
 }

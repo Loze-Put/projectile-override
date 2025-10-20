@@ -3,6 +3,12 @@
 All notable changes to this plugin will be documented in this file.
 
 ----------------------------------------------------------------------
+## [1.0.5] - 2025-10-20
+### Added
+- Added Tormented Demon.
+### Fixed
+- Fixed an issue with Zebak overrides.
+
 ## [1.0.4] - 2025-09-26
 ### Added
 - Added Manticore and Random.

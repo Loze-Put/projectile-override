@@ -25,6 +25,7 @@ Boss projectiles can be replaced by any other bosses' projectiles. Note that not
 | Olm                     | ✅              |
 | Scurrius                | ❌              |
 | Sotetseg                | ❌              |
+| Tormented Demon         | ❌              |
 | Vardorvis               | ❌              |
 | Wardens                 | ❌              |
 | Wardens divine          | ✅              |

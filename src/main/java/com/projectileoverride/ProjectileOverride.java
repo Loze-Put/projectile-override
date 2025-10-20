@@ -1,15 +1,19 @@
 package com.projectileoverride;
 
+import lombok.Getter;
 import net.runelite.api.Projectile;
 
 public class ProjectileOverride
 {
+    @Getter
+    private final int sourceProjectileId;
 	private final int overrideProjectileId;
     private final int style;
 	private final int[] requiredRegion;
 
-    public ProjectileOverride(int overrideProjectileId, int style, int[] requiredRegion) {
-		this.overrideProjectileId = overrideProjectileId;
+    public ProjectileOverride(int sourceProjectileId, int overrideProjectileId, int style, int[] requiredRegion) {
+		this.sourceProjectileId = sourceProjectileId;
+        this.overrideProjectileId = overrideProjectileId;
         this.style = style;
 		this.requiredRegion = requiredRegion;
 	}
