@@ -3,6 +3,10 @@
 All notable changes to this plugin will be documented in this file.
 
 ----------------------------------------------------------------------
+## [1.0.6] - 2025-10-25
+### Fixed
+- Fixed an issue with Zebak overrides in multiplayer raids.
+
 ## [1.0.5] - 2025-10-20
 ### Added
 - Added Tormented Demon.

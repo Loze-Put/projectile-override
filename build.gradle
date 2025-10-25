@@ -27,7 +27,7 @@ dependencies {
 }
 
 group = 'com.projectileoverride'
-version = '1.0.5'
+version = '1.0.6'
 
 tasks.withType(JavaCompile).configureEach {
 	options.encoding = 'UTF-8'
