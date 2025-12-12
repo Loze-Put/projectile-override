@@ -102,6 +102,7 @@ public class ProjectileOverridePlugin extends Plugin
         hydrateOverrideMap(BossProjectiles.AKKHA, config.Akkha());
 		hydrateOverrideMap(BossProjectiles.CERBERUS, config.Cerberus());
 		hydrateOverrideMap(BossProjectiles.DAGGANOTH_KINGS, config.DagganothKings());
+        hydrateOverrideMap(BossProjectiles.DEMONIC_GORILLA, config.DemonicGorillas());
 		hydrateOverrideMap(BossProjectiles.DOOM_OF_MOKHAIOTL, config.DoomOfMokhaiotl());
 		hydrateOverrideMap(BossProjectiles.DOOM_OF_MOKHAIOTL_ROCKS, config.DoomOfMokhaiotlRocks());
 		hydrateOverrideMap(BossProjectiles.HUEYCOATL, config.Hueycoatl());

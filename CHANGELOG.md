@@ -3,6 +3,10 @@
 All notable changes to this plugin will be documented in this file.
 
 ----------------------------------------------------------------------
+## [1.0.7] - 2025-12-12
+### Added
+- Added Demonic Gorilla.
+
 ## [1.0.6] - 2025-10-25
 ### Fixed
 - Fixed an issue with Zebak overrides in multiplayer raids.

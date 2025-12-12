@@ -36,6 +36,16 @@ public interface ProjectileOverrideConfig extends Config
 		return BossProjectiles.DEFAULT;
 	}
 
+    @ConfigItem(
+        keyName = "demonic-gorilla",
+        name = "Demonic Gorilla",
+        description = "Projectile override for demonic gorillas"
+    )
+    default BossProjectiles DemonicGorillas()
+    {
+        return BossProjectiles.DEFAULT;
+    }
+
 	@ConfigItem(
 		keyName = "dom",
 		name = "Doom",

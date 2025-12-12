@@ -10,6 +10,7 @@ public enum BossProjectiles
     AKKHA("Akkha", 2253, 2255),
 	CERBERUS("Cerberus", 1242, 1245),
 	DAGGANOTH_KINGS("DKS", 162, 475, new int[] { 11588, 11589 }),
+    DEMONIC_GORILLA("Demonic Gorilla", 1304, 1302),
 	DOOM_OF_MOKHAIOTL("Doom", 3379, 3380, 3378),
 	DOOM_OF_MOKHAIOTL_ROCKS("Doom rocks", 3385, 3384),
 	HUEYCOATL("Hueycoatl", 2975, 2972, 2969),

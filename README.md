@@ -11,6 +11,7 @@ Boss projectiles can be replaced by any other bosses' projectiles. Note that not
 | Akkha                   | ❌              |
 | Cerberus                | ❌              |
 | Dagganoth Kings         | ❌              |
+| Demonic Gorilla         | ❌              |
 | Doom of Mokhaiotl       | ✅              |
 | Doom of Mokhaiotl rocks | ❌              |
 | Hueycoatl               | ✅              |
