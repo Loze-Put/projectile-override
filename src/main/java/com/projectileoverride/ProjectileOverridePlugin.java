@@ -70,7 +70,7 @@ public class ProjectileOverridePlugin extends Plugin
 
 		ProjectileOverride override = overrideMap.getOrDefault(projectile.getId(), null);
 
-		if (override != null && override.canOverride(projectile)) {
+		if (override != null && override.canOverride(projectile, client)) {
 			overriddenProjectiles.removeIf(p -> p.getRemainingCycles() < 0);
 			overriddenProjectiles.add(replaceProjectile(projectile, override));
 		}
