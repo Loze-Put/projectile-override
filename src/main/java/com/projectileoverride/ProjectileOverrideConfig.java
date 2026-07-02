@@ -138,6 +138,15 @@ public interface ProjectileOverrideConfig extends Config
 		return BossProjectiles.DEFAULT;
 	}
 
+	@ConfigItem(
+			keyName = "maggot-king",
+			name = "Maggot King",
+			description = "Projectile override for Maggot King"
+	)
+	default BossProjectiles MaggotKing() {
+		return BossProjectiles.DEFAULT;
+	}
+
     @ConfigItem(
         keyName = "manticore",
         name = "Manticore",

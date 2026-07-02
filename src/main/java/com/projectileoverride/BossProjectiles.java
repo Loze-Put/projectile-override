@@ -21,6 +21,7 @@ public enum BossProjectiles
     KALPHITE_QUEEN("Kalphite Queen", 280, 288),
     KREE_ARRA("Kree Arra", 1200, 1199),
     LEVIATHAN("Leviathan", 2489, 2487, 2488),
+    MAGGOT_KING("Maggot King", 3445, 1555),
     MANTICORE("Manticore", 2681, 2683, 2685),
 	OLM("Olm", 1341, 1343, 1345),
 	SCURRIUS("Scurrius", 2640, 2642),
