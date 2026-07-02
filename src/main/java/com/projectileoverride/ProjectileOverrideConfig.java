@@ -14,7 +14,8 @@ public interface ProjectileOverrideConfig extends Config
         name = "Akkha",
         description = "Projectile override for Akkha"
     )
-    default BossProjectiles Akkha() {
+    default BossProjectiles Akkha() 
+	{
         return BossProjectiles.DEFAULT;
     }
 
@@ -23,7 +24,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Cerberus",
 		description = "Projectile override for Cerberus"
 	)
-	default BossProjectiles Cerberus() {
+	default BossProjectiles Cerberus() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -32,7 +34,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "DKS",
 		description = "Projectile override for the Dagganoth Kings"
 	)
-	default BossProjectiles DagganothKings() {
+	default BossProjectiles DagganothKings() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -71,7 +74,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Hueycoatl",
 		description = "Projectile override for Hueycoatl"
 	)
-	default BossProjectiles Hueycoatl() {
+	default BossProjectiles Hueycoatl() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -80,7 +84,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Hunllef",
 		description = "Projectile override for normal Hunllef"
 	)
-	default BossProjectiles HunllefNormal() {
+	default BossProjectiles HunllefNormal() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -89,16 +94,18 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Hunllef (Corrupted)",
 		description = "Projectile override for corrupted Hunllef"
 	)
-	default BossProjectiles HunllefCorrupted() {
+	default BossProjectiles HunllefCorrupted() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
     @ConfigItem(
-            keyName = "hdyra",
-            name = "Hydra",
-            description = "Projectile override for Alchemical Hydra and smaller hydras"
+        keyName = "hdyra",
+        name = "Hydra",
+        description = "Projectile override for Alchemical Hydra and smaller hydras"
     )
-    default BossProjectiles AlchemicalHydra() {
+    default BossProjectiles AlchemicalHydra() 
+	{
         return BossProjectiles.DEFAULT;
     }
 
@@ -107,7 +114,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Inferno",
 		description = "Projectile override for the blobs in the Inferno"
 	)
-	default BossProjectiles Inferno() {
+	default BossProjectiles Inferno() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -116,7 +124,8 @@ public interface ProjectileOverrideConfig extends Config
         name = "Kalphite Queen",
         description = "Projectile override for the Kalphite Queen"
     )
-    default BossProjectiles KalphiteQueen() {
+    default BossProjectiles KalphiteQueen() 
+	{
         return BossProjectiles.DEFAULT;
     }
 
@@ -125,7 +134,8 @@ public interface ProjectileOverrideConfig extends Config
         name = "Kree Arra",
         description = "Projectile override for Kree Arra"
     )
-    default BossProjectiles KreeArra() {
+    default BossProjectiles KreeArra() 
+	{
         return BossProjectiles.DEFAULT;
     }
 
@@ -134,16 +144,18 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Leviathan",
 		description = "Projectile override for Leviathan"
 	)
-	default BossProjectiles Leviathan() {
+	default BossProjectiles Leviathan() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
 	@ConfigItem(
-			keyName = "maggot-king",
-			name = "Maggot King",
-			description = "Projectile override for Maggot King"
+		keyName = "maggot-king",
+		name = "Maggot King",
+		description = "Projectile override for Maggot King"
 	)
-	default BossProjectiles MaggotKing() {
+	default BossProjectiles MaggotKing() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -152,7 +164,8 @@ public interface ProjectileOverrideConfig extends Config
         name = "Manticore",
         description = "Projectile override for Manticores within the Fortis Colosseum"
     )
-    default BossProjectiles Manticore() {
+    default BossProjectiles Manticore() 
+	{
         return BossProjectiles.DEFAULT;
     }
 
@@ -161,7 +174,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Olm",
 		description = "Projectile override for Olm in the Chambers of Xeric"
 	)
-	default BossProjectiles Olm() {
+	default BossProjectiles Olm() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -170,7 +184,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Scurrius",
 		description = "Projectile override for Scurrius"
 	)
-	default BossProjectiles Scurrius() {
+	default BossProjectiles Scurrius() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -179,7 +194,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Sotetseg",
 		description = "Projectile override for Sotetseg in the Theatre of Blood"
 	)
-	default BossProjectiles Sotetseg() {
+	default BossProjectiles Sotetseg() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -188,7 +204,8 @@ public interface ProjectileOverrideConfig extends Config
         name = "Tormented Demon",
         description = "Projectile override for Tormented Demons within the Ancient Guthixian Temple"
     )
-    default BossProjectiles TormentedDemon() {
+    default BossProjectiles TormentedDemon() 
+	{
         return BossProjectiles.DEFAULT;
     }
 
@@ -197,7 +214,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Vardorvis",
 		description = "Projectile override for Vardorvis"
 	)
-	default BossProjectiles Vardorvis() {
+	default BossProjectiles Vardorvis() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -206,7 +224,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Wardens",
 		description = "Projectile override for Wardens in the Tombs of Amascut"
 	)
-	default BossProjectiles Wardens() {
+	default BossProjectiles Wardens() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -215,7 +234,8 @@ public interface ProjectileOverrideConfig extends Config
         name = "Wardens divine",
         description = "Projectile override for the divine projectiles of the Wardens in the Tombs of Amascut"
     )
-    default BossProjectiles WardensDivine() {
+    default BossProjectiles WardensDivine() 
+	{
         return BossProjectiles.DEFAULT;
     }
 
@@ -224,7 +244,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Whisperer",
 		description = "Projectile override for the Whisperer"
 	)
-	default BossProjectiles Whisperer() {
+	default BossProjectiles Whisperer() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 
@@ -253,7 +274,8 @@ public interface ProjectileOverrideConfig extends Config
 		name = "Zulrah",
 		description = "Projectile override for Zulrah"
 	)
-	default BossProjectiles Zulrah() {
+	default BossProjectiles Zulrah() 
+	{
 		return BossProjectiles.DEFAULT;
 	}
 }
