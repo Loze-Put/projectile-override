@@ -35,7 +35,7 @@ All notable changes to this plugin will be documented in this file.
 ### Added
 - Added Doom rocks, Zebak and Zebak rocks.
 ### Fixed
-- Fixed an issue where the Dagganoth Kings[README.md](README.md) override would override all water wave projectiles.
+- Fixed an issue where the Dagganoth Kings override would override all water wave projectiles.
 
 ## [1.0.1] - 2025-08-12
 ### Added
