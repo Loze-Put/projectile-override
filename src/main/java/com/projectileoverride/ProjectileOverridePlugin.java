@@ -113,6 +113,7 @@ public class ProjectileOverridePlugin extends Plugin
         hydrateOverrideMap(BossProjectiles.KALPHITE_QUEEN, config.KalphiteQueen());
         hydrateOverrideMap(BossProjectiles.KREE_ARRA, config.KreeArra());
 		hydrateOverrideMap(BossProjectiles.LEVIATHAN, config.Leviathan());
+		hydrateOverrideMap(BossProjectiles.MAGGOT_KING, config.MaggotKing());
         hydrateOverrideMap(BossProjectiles.MANTICORE, config.Manticore());
 		hydrateOverrideMap(BossProjectiles.OLM, config.Olm());
 		hydrateOverrideMap(BossProjectiles.SCURRIUS, config.Scurrius());
