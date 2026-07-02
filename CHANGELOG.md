@@ -3,6 +3,10 @@
 All notable changes to this plugin will be documented in this file.
 
 ----------------------------------------------------------------------
+## [1.0.8] - 2026-07-02
+### Added
+- Added Maggot King.
+
 ## [1.0.7] - 2025-12-12
 ### Added
 - Added Demonic Gorilla.
@@ -39,4 +43,4 @@ All notable changes to this plugin will be documented in this file.
 
 ## [1.0.0] - 2025-07-28
 ### Added
-- Added the initial plugin
+- Added the initial plugin.
