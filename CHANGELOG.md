@@ -3,6 +3,10 @@
 All notable changes to this plugin will be documented in this file.
 
 ----------------------------------------------------------------------
+## [1.0.9] - 2026-07-04
+### Fixed
+- Fixed an issue where Maggot King overrides would override other boss projectiles.
+
 ## [1.0.8] - 2026-07-02
 ### Added
 - Added Maggot King.
