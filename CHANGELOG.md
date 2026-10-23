@@ -3,6 +3,13 @@
 All notable changes to this plugin will be documented in this file.
 
 ----------------------------------------------------------------------
+## [1.0.10] - 2026-10-23
+### Added
+- Added the Fractured Archive bosses.
+### Fixed
+- Fixed an issue where the Vardorvis override would override a Shockwave Colossus.
+- Fixed an issue where the Kalphite Queens ranged attack would not be overridden.
+
 ## [1.0.9] - 2026-07-04
 ### Fixed
 - Fixed an issue where Maggot King overrides would override other boss projectiles.
