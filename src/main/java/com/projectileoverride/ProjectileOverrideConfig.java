@@ -20,6 +20,16 @@ public interface ProjectileOverrideConfig extends Config
     }
 
 	@ConfigItem(
+		keyName = "bork",
+		name = "Bork",
+		description = "Projectile override for The Smorks attacks within the Fractured Archive"
+	)
+	default BossProjectiles Bork()
+	{
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
 		keyName = "cerberus",
 		name = "Cerberus",
 		description = "Projectile override for Cerberus"
@@ -35,6 +45,16 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for the Dagganoth Kings"
 	)
 	default BossProjectiles DagganothKings() 
+	{
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
+		keyName = "dagonhai-elder",
+		name = "Dagon'hai Elder",
+		description = "Projectile override for Dagon'hai Elder within the Fractured Archive"
+	)
+	default BossProjectiles DagonhaiElder()
 	{
 		return BossProjectiles.DEFAULT;
 	}
@@ -170,6 +190,26 @@ public interface ProjectileOverrideConfig extends Config
     }
 
 	@ConfigItem(
+		keyName = "moia",
+		name = "Moia",
+		description = "Projectile override for Moia within the Fractured Archive"
+	)
+	default BossProjectiles Moia()
+	{
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
+		keyName = "ocellus",
+		name = "Ocellus",
+		description = "Projectile override for Ocellus within the Fractured Archive"
+	)
+	default BossProjectiles Ocellus()
+	{
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
 		keyName = "olm",
 		name = "Olm",
 		description = "Projectile override for Olm in the Chambers of Xeric"
@@ -245,6 +285,16 @@ public interface ProjectileOverrideConfig extends Config
 		description = "Projectile override for the Whisperer"
 	)
 	default BossProjectiles Whisperer() 
+	{
+		return BossProjectiles.DEFAULT;
+	}
+
+	@ConfigItem(
+		keyName = "xarth",
+		name = "Xarth",
+		description = "Projectile override for Xarth within the Fractured Archive"
+	)
+	default BossProjectiles Xarth()
 	{
 		return BossProjectiles.DEFAULT;
 	}

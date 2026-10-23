@@ -9,8 +9,10 @@ Boss projectiles can be replaced by any other bosses' projectiles. Note that not
 | Boss                    | Supports melee |
 | ----------------------- | -------------- |
 | Akkha                   | ❌              |
+| Bork                    | ❌              |
 | Cerberus                | ❌              |
 | Dagganoth Kings         | ❌              |
+| Dagon'hai Elder         | ❌              |
 | Demonic Gorilla         | ❌              |
 | Doom of Mokhaiotl       | ✅              |
 | Doom of Mokhaiotl rocks | ❌              |
@@ -24,6 +26,8 @@ Boss projectiles can be replaced by any other bosses' projectiles. Note that not
 | Leviathan               | ✅              |
 | Maggot King             | ❌              |
 | Manticore               | ✅              |
+| Moia                    | ❌              |
+| Ocellus                 | ❌              |
 | Olm                     | ✅              |
 | Scurrius                | ❌              |
 | Sotetseg                | ❌              |
@@ -32,6 +36,7 @@ Boss projectiles can be replaced by any other bosses' projectiles. Note that not
 | Wardens                 | ❌              |
 | Wardens divine          | ✅              |
 | Whisperer               | ❌              |
+| Xarth                   | ❌              |
 | Zebak                   | ❌              |
 | Zebak rocks and jugs    | ❌              |
 | Zulrah                  | ❌              |

@@ -100,8 +100,10 @@ public class ProjectileOverridePlugin extends Plugin
 	private void createOverrideMap() {
 		overrideMap.clear();
         hydrateOverrideMap(BossProjectiles.AKKHA, config.Akkha());
+		hydrateOverrideMap(BossProjectiles.BORK, config.Bork());
 		hydrateOverrideMap(BossProjectiles.CERBERUS, config.Cerberus());
 		hydrateOverrideMap(BossProjectiles.DAGGANOTH_KINGS, config.DagganothKings());
+		hydrateOverrideMap(BossProjectiles.DAGON_HAI_ELDER, config.DagonhaiElder());
         hydrateOverrideMap(BossProjectiles.DEMONIC_GORILLA, config.DemonicGorillas());
 		hydrateOverrideMap(BossProjectiles.DOOM_OF_MOKHAIOTL, config.DoomOfMokhaiotl());
 		hydrateOverrideMap(BossProjectiles.DOOM_OF_MOKHAIOTL_ROCKS, config.DoomOfMokhaiotlRocks());
@@ -115,6 +117,8 @@ public class ProjectileOverridePlugin extends Plugin
 		hydrateOverrideMap(BossProjectiles.LEVIATHAN, config.Leviathan());
 		hydrateOverrideMap(BossProjectiles.MAGGOT_KING, config.MaggotKing());
         hydrateOverrideMap(BossProjectiles.MANTICORE, config.Manticore());
+		hydrateOverrideMap(BossProjectiles.MOIA, config.Moia());
+		hydrateOverrideMap(BossProjectiles.OCELLUS, config.Ocellus());
 		hydrateOverrideMap(BossProjectiles.OLM, config.Olm());
 		hydrateOverrideMap(BossProjectiles.SCURRIUS, config.Scurrius());
 		hydrateOverrideMap(BossProjectiles.SOTETSEG, config.Sotetseg());
@@ -123,6 +127,7 @@ public class ProjectileOverridePlugin extends Plugin
 		hydrateOverrideMap(BossProjectiles.WARDENS, config.Wardens());
         hydrateOverrideMap(BossProjectiles.WARDENS_DIVINE, config.WardensDivine());
 		hydrateOverrideMap(BossProjectiles.WHISPERER, config.Whisperer());
+		hydrateOverrideMap(BossProjectiles.XARTH, config.Xarth());
 		hydrateOverrideMap(BossProjectiles.ZEBAK, config.Zebak());
 		hydrateOverrideMap(BossProjectiles.ZEBAK_ROCKS, config.ZebakRocks());
 		hydrateOverrideMap(BossProjectiles.ZULRAH, config.Zulrah());
